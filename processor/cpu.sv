@@ -36,13 +36,13 @@ module cpu(
         else if (ir[7:4] == 4'b0110) // sub acc + data
           acc <= acc - mbr;
         else if (ir[7:4] == 4'b0001) // xor acc + data
-          acc <= acc ^ mbr
+          acc <= acc ^ mbr;
         else if (ir[7:4] == 4'b0000) // not data
-          acc <= !mbr
+          acc <= !mbr;
         else if (ir[7:4] == 4'b0111) // or acc + data
-          acc <= acc | mbr
+          acc <= acc | mbr;
         else if (ir[7:4] == 4'b0010) // and acc + data
-          acc <= acc & mbr
+          acc <= acc & mbr;
         else if (ir[7:4] == 4'b0011) // store
           we <= 1'b1;
       end
