@@ -9,7 +9,7 @@ LOAD a
 OR b
 STORE c
 LOAD a
-NOT b
+NOT a
 STORE c
 LOAD a
 XOR b
