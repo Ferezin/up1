@@ -24,18 +24,18 @@ module cpu(
       end
       DECODE: begin
         ir = mbr;
-        mar <= {4'b1111, ir[3:0]};
+        mar <= {3'b111, ir[4:0]};
       end
       EXECUTE: begin
         if (ir[7] == 1'b1)           // jump
           pc <= {1'b0, ir[6:0]};
-        else if (ir[7:4] == 3'b011) // indirect load 
+        else if (ir[7:5] == 3'b011) // indirect load 
           acc <= mbr;
-        else if (ir[7:4] == 3'b001) // add acc + data
+        else if (ir[7:5] == 3'b001) // add acc + data
           acc <= acc + mbr;
-        else if (ir[7:4] == 3'b010) // sub acc + data
+        else if (ir[7:5] == 3'b010) // sub acc + data
           acc <= acc - mbr;
-        else if (ir[7:4] == 3'b000) // store
+        else if (ir[7:5] == 3'b000) // store
           we <= 1'b1;
       end
       endcase  

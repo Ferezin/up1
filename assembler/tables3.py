@@ -14,7 +14,7 @@ space_table = {       #   dec   |        bin        |  hex
 }
 
 fields_table = {
-    "opcode"  : 4,
-    "address" : 4,
+    "opcode"  : 3,
+    "address" : 5,
     "jump"    : 7
 }
